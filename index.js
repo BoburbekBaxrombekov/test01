@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const PORT = process.env.PORT || 3001
 const configDb = require("./data/db")
 configDb()
 const bodyParser = require('body-parser')
@@ -25,4 +26,4 @@ app.use('/v1',require('./routes/fileRoutes'))
 //agar hato back da bolganida konsolga hato chiqar edi
 
 
-app.listen(3001, console.log('server is running on port 3001'))
+app.listen(PORT, console.log(`server is running on port ${PORT}`))
